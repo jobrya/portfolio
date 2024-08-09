@@ -1,0 +1,59 @@
+html {scroll-behavior: smooth}
+
+:root {
+    --dark-mode-background-color: rgb(23, 24, 23);
+    --dark-mode-text-color: white;
+    --light-mode-background-color: var(--dark-mode-text-color);
+    --light-mode-text-color: var(--dark-mode-background-color);
+    --accent-color: rgb(72, 153, 46);
+}
+
+.dark-mode {
+    background-color: var(--dark-mode-background-color);
+    color: var(--dark-mode-text-color)
+}
+
+.light-mode {
+    background-color: var(--light-mode-background-color);
+    color: var(--light-mode-text-color)
+}
+
+body {
+    /* background-color: var(--dark-mode-background-color);
+    color: var(--dark-mode-text-color); */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin: 0;
+    padding: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    /* color: var(--dark-mode-text-color); */
+}
+
+/* .top-bar {
+    display: flex;
+    position: sticky;
+    width: 100%;
+    top: 0px;
+    background-color: var(--accent-color);
+} */
+
+.top-bar-left {
+    display: flex;
+    position: sticky;
+    direction: ltr;
+    margin-right: auto;
+    padding-left: 2%;
+    justify-content: center;
+}
+
+@media (max-width: 1000px) {
+    body {
+        width: 95%;
+    }
+}
