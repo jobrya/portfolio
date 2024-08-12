@@ -5,7 +5,8 @@ html {scroll-behavior: smooth}
     --dark-mode-text-color: white;
     --light-mode-background-color: var(--dark-mode-text-color);
     --light-mode-text-color: var(--dark-mode-background-color);
-    --accent-color: rgb(72, 153, 46);
+    --light-mode-accent-color: rgb(106, 87, 213);
+    --dark-mode-accent-color: rgb(212, 184, 70);
 }
 
 .dark-mode {
@@ -18,38 +19,162 @@ html {scroll-behavior: smooth}
     color: var(--light-mode-text-color)
 }
 
+html {
+    margin: 0;
+    font-family: "Alfa Slab One", sans-serif;
+    display: block;
+}
+
 body {
-    /* background-color: var(--dark-mode-background-color);
-    color: var(--dark-mode-text-color); */
     margin: 0;
-    font-family: Arial, sans-serif;
+    overflow: scroll;
 }
 
-h1 {
-    margin: 0;
-    padding: 0.5rem;
+main {
+    min-height: 100vh;
 }
 
-a {
-    text-decoration: none;
-    /* color: var(--dark-mode-text-color); */
-}
-
-/* .top-bar {
+.main-column {
     display: flex;
-    position: sticky;
-    width: 100%;
-    top: 0px;
-    background-color: var(--accent-color);
-} */
-
-.top-bar-left {
-    display: flex;
-    position: sticky;
-    direction: ltr;
-    margin-right: auto;
-    padding-left: 2%;
+    flex: 1;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.mode-selector {
+    top: 10px;
+    position: sticky;
+}
+
+.light-button {
+    background-image: url("../assets/light_mode.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    padding: none;
+    border: none;
+    background-color: transparent;
+    border-radius: 30%;
+    position: absolute;
+    right: 10px;
+}
+
+.light-button:hover {
+    background-color: var(--light-mode-accent-color);
+}
+
+.dark-button {
+    background-image: url("../assets/dark_mode.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    padding: none;
+    border: none;
+    background-color: transparent;
+    border-radius: 30%;
+    position: absolute;
+    right: 10px;
+}
+
+.dark-button:hover {
+    background-color: var(--dark-mode-accent-color);
+}
+
+.bio-greet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    width: 75%;
+}
+
+.bio-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    width: 60%;
+}
+
+.name {
+    font-size: 32px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.dark-contact {
+    padding: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 30%;
+}
+
+.dark-contact:hover {
+    background-color: var(--dark-mode-accent-color);
+}
+
+.light-contact {
+    padding: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 30%;
+}
+
+.light-contact:hover {
+    background-color: var(--light-mode-accent-color);
+}
+
+.icon {
+    height: 32px;
+    width: 32px;
+}
+
+.dark-link {
+    text-decoration: none;
+    color: var(--dark-mode-text-color);
+    border-radius: 5%;
+}
+
+.dark-link:hover {
+    background-color: var(--light-mode-accent-color);
+}
+
+.light-link {
+    text-decoration: none;
+    color: var(--light-mode-text-color);
+}
+
+.light-link:hover {
+    background-color: var(--dark-mode-accent-color);
+}
+
+.selfie-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.selfie {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 1000px) {

@@ -1,13 +1,11 @@
-use std::ops::Deref;
-
 use yew::prelude::*;
+use gloo_console::log;
+mod app_state;
+use app_state::AppState;
 
-mod app_context;
-use app_context::{AppContext, Mode};
 mod components;
 use components::{
-    mode_selector::ModeSelector,
-    bio::Bio,
+    bio::{BioGreet, BioInfo},
     contacts::Contacts,
     projects::Projects,
 };
@@ -19,22 +17,34 @@ fn main() {
 
 #[function_component]
 fn App() -> Html {
-    let mode = use_reducer(|| Mode::default());
-    let app_context_state = use_state(|| AppContext {
-        mode: mode,
-    });
-    //let app_context = use_context::<AppContext>().expect("failed to get app context");
-    //let test2 = app_context.mode.;
+    let state = use_state(|| AppState::default());
+
+    let change_theme = {
+        let state = state.clone();
+
+        Callback::from(move |_| {
+            let mode = &state.mode;
+            log!("mode selected :", mode.next_state().to_string()); 
+            state.set(AppState {
+                mode: mode.next_state(),
+            }
+        )})
+    };
 
     html! {
-        <ContextProvider<AppContext> context = {(*app_context_state).clone()}>
-            //<main class = {app_context.mode.deref().to_string()}>
-            <main>
-                <ModeSelector/>
-                <Bio/>
-                <Contacts/>
+        <main class = {state.mode.to_string()}>
+            <div class = "mode-selector">
+                <button class = {state.mode.button_class()} onclick={change_theme}></button>
+            </div>
+            <div class = "selfie-container">
+                <img src = "./assets/josh.jpg" alt = "picture of Josh" class = "selfie"/>
+            </div>
+            <div class = "main-column">
+                <BioGreet/>
+                <Contacts mode = {state.mode.clone()}/>
+                <BioInfo mode = {state.mode.clone()}/>
                 <Projects/>
-            </main>
-        </ContextProvider<AppContext>>
+            </div>
+        </main>
     }
 }

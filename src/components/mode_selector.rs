@@ -1,17 +1,23 @@
 use yew::prelude::*;
+use gloo_console::log;
 use yew::{function_component, html, Html};
-use crate::app_context::{AppContext, ModeAction};
+use crate::app_state::{AppState, ModeState};
 
 #[function_component(ModeSelector)]
 pub fn mode_selector() -> Html {
-    let app_context = use_context::<AppContext>().expect("no app context found");
+    let state = use_state(|| AppState::default());
 
     let change_theme = {
-        let app_context = app_context.clone();
+        let state = state.clone();
+        //log!("mode selected : ", &state.mode.next_state().to_string());
 
         Callback::from(move |_| {
-            app_context.mode.dispatch(ModeAction::Switch)
-        })
+            let mode = &state.mode;
+            log!("mode selected : ", mode.next_state().to_string()); 
+            state.set(AppState {
+                mode: mode.next_state(),
+            }
+        )})
     };
 
     html! {
