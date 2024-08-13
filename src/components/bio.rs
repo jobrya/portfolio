@@ -24,7 +24,7 @@ pub fn bio_info(props: &BioInfoProps) -> Html {
         <div class = "bio-info"> 
             <p>
                 {
-                    "I’m a software developer in the U.S.A. with a love for solving puzzles. \
+                    "I’m a software developer in Alabama with a love for solving puzzles. \
                     I hold a degree in Civil Enginnering from Auburn University and have spent the past 3 years honing my skills by maintaining web applications. \
                     I have experience working with full-stack web applications, but I mostly enjoy working with "
                 }

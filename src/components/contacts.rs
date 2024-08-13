@@ -59,7 +59,7 @@ pub fn contact(props: &ContactCompProps) -> Html {
     html! {
         <div class = "contact">
             <a href = {props.contact.link.clone()} target = "_blank" rel = "noopener">
-            <img src = {props.contact.img_src.clone()} alt = {props.contact.alt.clone()} class = {props.mode.contact_class()}/>
+            <img src = {props.contact.img_src.clone()} alt = {props.contact.alt.clone()} class = {props.mode.icon_class()}/>
             </a>
         </div>
     }

@@ -33,8 +33,10 @@ fn App() -> Html {
 
     html! {
         <main class = {state.mode.to_string()}>
-            <div class = "mode-selector">
-                <button class = {state.mode.button_class()} onclick={change_theme}></button>
+            <div class = "mode-container">
+                <button class = {"hide-button"} onclick={change_theme}>
+                    <img src = {state.mode.mode_src()} alt = {"mode icon"} class = {state.mode.icon_class()}/>
+                </button>
             </div>
             <div class = "selfie-container">
                 <img src = "./assets/josh.jpg" alt = "picture of Josh" class = "selfie"/>
@@ -43,8 +45,12 @@ fn App() -> Html {
                 <BioGreet/>
                 <Contacts mode = {state.mode.clone()}/>
                 <BioInfo mode = {state.mode.clone()}/>
-                <Projects/>
+                <Projects mode = {state.mode.clone()}/>
             </div>
+            // <footer>
+            //     <p>{"bottom of the page"}
+            //     </p>
+            // </footer>
         </main>
     }
 }

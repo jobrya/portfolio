@@ -5,8 +5,11 @@ html {scroll-behavior: smooth}
     --dark-mode-text-color: white;
     --light-mode-background-color: var(--dark-mode-text-color);
     --light-mode-text-color: var(--dark-mode-background-color);
-    --light-mode-accent-color: rgb(106, 87, 213);
-    --dark-mode-accent-color: rgb(212, 184, 70);
+    --light-mode-highlight-color: rgb(106, 87, 213);
+    --dark-mode-highlight-color: rgb(212, 184, 70);
+    --dark-mode-accent-color: rgb(45, 44, 49);
+    --light-mode-accent-color: rgb(126, 126, 121);
+    --main-column-width: 60vw;
 }
 
 .dark-mode {
@@ -36,126 +39,15 @@ main {
 
 .main-column {
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.mode-selector {
+.mode-container {
+    position: fixed;
     top: 10px;
-    position: sticky;
-}
-
-.light-button {
-    background-image: url("../assets/light_mode.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 32px;
-    height: 32px;
-    padding: none;
-    border: none;
-    background-color: transparent;
-    border-radius: 30%;
-    position: absolute;
     right: 10px;
-}
-
-.light-button:hover {
-    background-color: var(--light-mode-accent-color);
-}
-
-.dark-button {
-    background-image: url("../assets/dark_mode.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 32px;
-    height: 32px;
-    padding: none;
-    border: none;
-    background-color: transparent;
-    border-radius: 30%;
-    position: absolute;
-    right: 10px;
-}
-
-.dark-button:hover {
-    background-color: var(--dark-mode-accent-color);
-}
-
-.bio-greet {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    width: 75%;
-}
-
-.bio-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    width: 60%;
-}
-
-.name {
-    font-size: 32px;
-}
-
-.contacts {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.dark-contact {
-    padding: 8px;
-    width: 32px;
-    height: 32px;
-    border-radius: 30%;
-}
-
-.dark-contact:hover {
-    background-color: var(--dark-mode-accent-color);
-}
-
-.light-contact {
-    padding: 8px;
-    width: 32px;
-    height: 32px;
-    border-radius: 30%;
-}
-
-.light-contact:hover {
-    background-color: var(--light-mode-accent-color);
-}
-
-.icon {
-    height: 32px;
-    width: 32px;
-}
-
-.dark-link {
-    text-decoration: none;
-    color: var(--dark-mode-text-color);
-    border-radius: 5%;
-}
-
-.dark-link:hover {
-    background-color: var(--light-mode-accent-color);
-}
-
-.light-link {
-    text-decoration: none;
-    color: var(--light-mode-text-color);
-}
-
-.light-link:hover {
-    background-color: var(--dark-mode-accent-color);
 }
 
 .selfie-container {
@@ -170,11 +62,111 @@ main {
     border-radius: 50%;
 }
 
+.hide-button {
+    background-color: transparent;
+    border: none;
+}
+
+.bio-greet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    width: var(--main-column-width);
+}
+
+.bio-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    width: var(--main-column-width);
+}
+
+.name {
+    font-size: 32px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.dark-icon {
+    padding: 0.75rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 1rem;
+}
+
+.dark-icon:hover {
+    background-color: var(--dark-mode-highlight-color);
+}
+
+.light-icon {
+    padding: 0.75rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 1rem;
+}
+
+.light-icon:hover {
+    background-color: var(--light-mode-highlight-color);
+}
+
+.dark-link {
+    text-decoration: none;
+    color: var(--dark-mode-text-color);
+    border-radius: 1rem;
+}
+
+.dark-link:hover {
+    background-color: var(--light-mode-highlight-color);
+}
+
+.light-link {
+    text-decoration: none;
+    color: var(--light-mode-text-color);
+    border-radius: 1rem;
+}
+
+.light-link:hover {
+    background-color: var(--dark-mode-highlight-color);
+}
+
 .projects {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.project {
+    margin: 1rem;
+    width: var(--main-column-width);
+}
+
+.project-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.dark-accent {
+    background-color: var(--dark-mode-accent-color);   
+    margin: 10px; 
+    border-radius: 2rem;
+}
+
+.light-accent {
+    background-color: var(--light-mode-accent-color);
+    margin: 10px; 
+    border-radius: 2rem;
 }
 
 @media (max-width: 1000px) {

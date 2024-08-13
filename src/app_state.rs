@@ -1,4 +1,3 @@
-
 #[derive(Default)]
 pub struct AppState {
     pub mode: ModeState,
@@ -20,17 +19,10 @@ impl ModeState {
         }
     }
 
-    pub fn button_class(&self) -> String {
+    pub fn icon_class(&self) -> String {
         match self {
-            ModeState::Light => {String::from("dark-button")},
-            ModeState::Dark => {String::from("light-button")},
-        }
-    }
-
-    pub fn contact_class(&self) -> String {
-        match self {
-            ModeState::Light => {String::from("dark-contact")},
-            ModeState::Dark => {String::from("light-contact")},
+            ModeState::Light => {String::from("dark-icon")},
+            ModeState::Dark => {String::from("light-icon")},
         }
     }
 
@@ -38,6 +30,20 @@ impl ModeState {
         match self {
             ModeState::Light => {String::from("light-link")},
             ModeState::Dark => {String::from("dark-link")},
+        }
+    }
+
+    pub fn accent_class(&self) -> String {
+        match self {
+            ModeState::Light => {String::from("light-accent")},
+            ModeState::Dark => {String::from("dark-accent")},
+        }
+    }
+
+    pub fn mode_src(&self) -> String {
+        match self {
+            ModeState::Light => {String::from("./assets/dark_mode.png")},
+            ModeState::Dark => {String::from("./assets/light_mode.png")},
         }
     }
 
@@ -59,6 +65,20 @@ impl ModeState {
         match self {
             ModeState::Light => {String::from("./assets/mail_light.png")},
             ModeState::Dark => {String::from("./assets/mail_dark.png")},
+        }
+    }
+
+    pub fn source_code_src(&self) -> String {
+        match self {
+            ModeState::Light => {String::from("./assets/light_source_code_icon.png")},
+            ModeState::Dark => {String::from("./assets/dark_source_code_icon.png")},
+        }
+    }
+
+    pub fn demo_src(&self) -> String {
+        match self {
+            ModeState::Light => {String::from("./assets/light_out_icon.png")},
+            ModeState::Dark => {String::from("./assets/dark_out_icon.png")},
         }
     }
 
