@@ -24,6 +24,10 @@ jobs:
       run: cargo install --locked trunk
     - name: Build the wasm
       run: trunk build --release
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: "./dist"
 
   deploy:
     needs: build
