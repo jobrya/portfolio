@@ -40,10 +40,24 @@ impl ModeState {
         }
     }
 
+    pub fn home_src(&self) -> String {
+        match self {
+            ModeState::Light => {String::from("./assets/dark_home.png")},
+            ModeState::Dark => {String::from("./assets/light_home.png")},
+        }
+    }
+
     pub fn mode_src(&self) -> String {
         match self {
             ModeState::Light => {String::from("./assets/dark_mode.png")},
             ModeState::Dark => {String::from("./assets/light_mode.png")},
+        }
+    }
+
+    pub fn folder_src(&self) -> String {
+        match self {
+            ModeState::Light => {String::from("./assets/dark_folder.png")},
+            ModeState::Dark => {String::from("./assets/light_folder.png")},
         }
     }
 

@@ -96,7 +96,7 @@ pub fn projects(props: &ProjectProps) -> Html {
     ]};
     
     html! { 
-        <div class = "projects">
+        <div id = "projects" class = "projects">
             <h2> {"Projects"} </h2>
             {
                 projects.iter().map(|project| 

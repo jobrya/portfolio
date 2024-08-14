@@ -34,14 +34,20 @@ fn App() -> Html {
     html! {
         <main class = {state.mode.to_string()}>
             <div class = "mode-container">
+                <a href = "#home">
+                    <img src = {state.mode.home_src()} alt = {"home icon"} class = {state.mode.icon_class()}/>
+                </a>
                 <button class = {"hide-button"} onclick={change_theme}>
                     <img src = {state.mode.mode_src()} alt = {"mode icon"} class = {state.mode.icon_class()}/>
                 </button>
+                <a href = "#projects">
+                    <img src = {state.mode.folder_src()} alt = {"projects icon"} class = {state.mode.icon_class()}/>
+                </a>      
             </div>
             <div class = "selfie-container">
                 <img src = "./assets/josh.jpg" alt = "picture of Josh" class = "selfie"/>
             </div>
-            <div class = "main-column">
+            <div id = "home" class = "main-column">
                 <BioGreet/>
                 <Contacts mode = {state.mode.clone()}/>
                 <BioInfo mode = {state.mode.clone()}/>

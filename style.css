@@ -45,9 +45,13 @@ main {
 }
 
 .mode-container {
+    display: flex;
     position: fixed;
     top: 10px;
     right: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .selfie-container {
