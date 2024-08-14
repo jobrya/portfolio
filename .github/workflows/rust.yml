@@ -23,9 +23,9 @@ jobs:
     - name: Install Trunk
       run: cargo install --locked trunk
     - name: Build the wasm
-      run: trunk build --release
+      run: trunk build --public-url ${{ github.event.repository.name }} --release
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
+      uses: actions/upload-pages-artifact@v4
       with:
         path: "./dist"
 
