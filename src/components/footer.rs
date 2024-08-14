@@ -10,7 +10,7 @@ pub struct FooterProps {
 pub fn footer(_props: &FooterProps) -> Html {
     html! {
         <div class = "footer">
-            <p> {"this is a footer"}
+            <p> {"Copyright © Josh O'Bryant 2024"}
             </p>
         </div>
     }
