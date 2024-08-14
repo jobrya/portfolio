@@ -8,12 +8,12 @@ use components::{
     bio::{BioGreet, BioInfo},
     contacts::Contacts,
     projects::Projects,
+    footer::Footer,
 };
 
 fn main() {
     yew::Renderer::<App>::new().render();
 }
-
 
 #[function_component]
 fn App() -> Html {
@@ -52,11 +52,8 @@ fn App() -> Html {
                 <Contacts mode = {state.mode.clone()}/>
                 <BioInfo mode = {state.mode.clone()}/>
                 <Projects mode = {state.mode.clone()}/>
+                <Footer mode = {state.mode.clone()}/>
             </div>
-            // <footer>
-            //     <p>{"bottom of the page"}
-            //     </p>
-            // </footer>
         </main>
     }
 }
