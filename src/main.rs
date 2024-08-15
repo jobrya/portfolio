@@ -33,7 +33,7 @@ fn App() -> Html {
 
     html! {
         <main class = {state.mode.to_string()}>
-            <div class = "mode-container">
+            <div class = "control-container">
                 <a href = "#home">
                     <img src = {state.mode.home_src()} alt = {"home icon"} class = {state.mode.icon_class()}/>
                 </a>
