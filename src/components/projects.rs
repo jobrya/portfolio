@@ -39,8 +39,8 @@ pub fn projects(props: &ProjectProps) -> Html {
     let projects: Vec<Project> = {vec![
         Project {
             name: String::from("portfolio"),
-            source_link: String::from(""),
-            demo_link: String::from("joshobryant"),
+            source_link: String::from("https://github.com/jobrya/portfolio"),
+            demo_link: String::from("https://jobrya.github.io/portfolio/"),
             info: String::from("This website! A place to showcase my work."),
             credits: vec![
                 Credit {
@@ -59,8 +59,8 @@ pub fn projects(props: &ProjectProps) -> Html {
         },
          Project {
             name: String::from("uppy-up"),
-            source_link: String::from(""),
-            demo_link: String::from("uppy"),
+            source_link: String::from("https://github.com/jobrya/uppy-up"),
+            demo_link: String::from("https://jobrya.github.io/uppy-up/"),
             info: String::from("A simle game where the player moves up before time runs out. Built with Bevy."),
             credits: vec![
                 Credit {
@@ -71,7 +71,7 @@ pub fn projects(props: &ProjectProps) -> Html {
         },
          Project {
             name: String::from("task board api"),
-            source_link: String::from(""),
+            source_link: String::from("https://github.com/jobrya/task_board_api"),
             demo_link: String::from(""),
             info: String::from("An example Rust API that uses HTTP requests to alter a Postgres database. Built with Actix and sqlx."),
             credits: vec![
