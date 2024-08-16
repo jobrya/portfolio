@@ -1,6 +1,2 @@
 ## Josh O'Bryant's Portfolio Site
-* Web Applications
-  * portfolio
-  * task-board-api
-* Games
-  * uppy-up
+* Source for portfolio website built with Yew in Rust and compiled to WebAssembly.
