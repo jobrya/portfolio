@@ -61,7 +61,7 @@ pub fn projects(props: &ProjectProps) -> Html {
             name: String::from("uppy-up"),
             source_link: String::from("https://github.com/jobrya/uppy-up"),
             demo_link: String::from("https://jobrya.github.io/uppy-up/"),
-            info: String::from("A simle game where the player moves up before time runs out. Built with Bevy."),
+            info: String::from("A simle game where the player moves up before time runs out."),
             credits: vec![
                 Credit {
                     name: String::from("Bevy"),
@@ -73,7 +73,7 @@ pub fn projects(props: &ProjectProps) -> Html {
             name: String::from("task board api"),
             source_link: String::from("https://github.com/jobrya/task_board_api"),
             demo_link: String::from(""),
-            info: String::from("An example Rust API that uses HTTP requests to alter a Postgres database. Built with Actix and sqlx."),
+            info: String::from("An example Rust API that uses HTTP requests to alter a Postgres database."),
             credits: vec![
                 Credit {
                     name: String::from("Actix"),
